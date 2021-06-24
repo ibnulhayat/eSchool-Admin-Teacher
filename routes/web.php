@@ -40,8 +40,7 @@ Route::group(['middleware' => 'admin'], function () {
 
 	Route::get('/logout', 'Authentication\Login@logout');
 	Route::get('/welcome', 'HomeController@index');
-
-
+	
 	// Common controller
 	Route::get('/districtlist', 'CommonController@getDistrictList');
 	Route::get('/thanalist/{id}', 'CommonController@getThanaList');

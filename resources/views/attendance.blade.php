@@ -27,74 +27,69 @@
 							<div class="col-sm-8">
 								<div class="input-group">
 									<select id="className" name="className"
-									class="form-control custom-select">
+									class="form-control custom-select"></select>
+								</div>
+							</div>
+						</div>
+					</div>
 
-								</select>
+					<div class="col-md-6">
+						<div class="form-group row">
+							<label class="col-sm-4 control-label">Search Student:</label>
+							<div class="col-sm-8">
+								<div class="input-group">
+									<input type="text" id="searchByStdentID" class="form-control" placeholder="Search page">
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="col-md-6">
-					<div class="form-group row">
-						<label class="col-sm-4 control-label">Search Student:</label>
-						<div class="col-sm-8">
-							<div class="input-group">
-								<input type="text" id="searchByStdentID" class="form-control" placeholder="Search page">
+				<div class="form-check-inline">
+					<input  type="radio" name="inlineRadioOptions" id="radioPresent" value="Present"><label class="form-check-label" for="radioPresent">Present</label>
+
+					<input  type="radio" name="inlineRadioOptions" id="radioAbsent" value="Absent">
+					<label class="form-check-label" for="radioAbsent">Absent</label>
+
+					<input  type="radio" name="inlineRadioOptions" id="radioLeave" value="Leave">
+					<label class="form-check-label" for="radioLeave">Leave</label>
+				</div>
+				<div class="form-check-inline">
+					<input  type="radio" name="inlineRadioOptions" id="radioPresent" value="Present"><label class="form-check-label" for="radioPresent">Present</label>
+
+					<input  type="radio" name="inlineRadioOptions" id="radioAbsent" value="Absent">
+					<label class="form-check-label" for="radioAbsent">Absent</label>
+
+					<input  type="radio" name="inlineRadioOptions" id="radioLeave" value="Leave">
+					<label class="form-check-label" for="radioLeave">Leave</label>
+				</div>
+
+
+
+				<div class="col-md-12">
+					<form >
+						<div class="form-body">
+							{{ csrf_field() }}
+							<div class="row p-t-20">
+								<div class="table-responsive">
+									<table id="studentList" class="p-l-0 p-r-0 table table-bordered table-striped">
+										<thead>
+											<tr>
+												<th>Student Name</th>
+												<th>Student ID</th>
+												<th>Attendance</th>
+											</tr>
+										</thead>
+										<tbody> </tbody>
+									</table>
+								</div>
 							</div>
 						</div>
-					</div>
+					</form>
 				</div>
 			</div>
-
-			<!-- <div class="form-check-inline">
-				<input  type="radio" name="inlineRadioOptions" id="radioPresent" value="Present"><label class="form-check-label" for="radioPresent">Present</label>
-
-				<input  type="radio" name="inlineRadioOptions" id="radioAbsent" value="Absent">
-				<label class="form-check-label" for="radioAbsent">Absent</label>
-
-				<input  type="radio" name="inlineRadioOptions" id="radioLeave" value="Leave">
-				<label class="form-check-label" for="radioLeave">Leave</label>
-			</div>
-			<div class="form-check-inline">
-				<input  type="radio" name="inlineRadioOptions" id="radioPresent" value="Present"><label class="form-check-label" for="radioPresent">Present</label>
-
-				<input  type="radio" name="inlineRadioOptions" id="radioAbsent" value="Absent">
-				<label class="form-check-label" for="radioAbsent">Absent</label>
-
-				<input  type="radio" name="inlineRadioOptions" id="radioLeave" value="Leave">
-				<label class="form-check-label" for="radioLeave">Leave</label>
-			</div>
-		-->
-
-		<div class="col-md-12">
-			<form >
-				<div class="form-body">
-					{{ csrf_field() }}
-					<div class="row p-t-20">
-						<div class="table-responsive">
-							<table id="studentList"
-							class="p-l-0 p-r-0 table table-bordered table-striped">
-							<thead>
-								<tr>
-									<th>Student Name</th>
-									<th>Student ID</th>
-									<th>Attendance</th>
-								</tr>
-							</thead>
-							<tbody>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</form>
+		</div>
 	</div>
-</div>
-</div>
-</div>
-
-
 </div>
 @endsection
 @push('scripts')

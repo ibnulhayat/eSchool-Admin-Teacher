@@ -18,7 +18,7 @@
 
     <!-- show Referral vid start bellow -->
     <div class="col-12">
-       <div class="card">
+     <div class="card">
 
         <div class="card-header bg-megna">
             <div class="d-flex">
@@ -33,22 +33,22 @@
           </div>
       </div>
       <div class="card-body">
-         <div class="table-responsive">
-            <table id="subjectList" class="p-l-0 p-r-0 table table-bordered table-striped">
-               <thead>
-                <tr>
-                    <th>Full Name</th>
-                    <th>Short Name</th>
-                    <th width="10%">Action</th>
-                </tr>
-            </thead>
-            <tbody>
+       <div class="table-responsive">
+        <table id="subjectList" class="p-l-0 p-r-0 table table-bordered table-striped">
+         <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Short Name</th>
+                <th width="10%">Action</th>
+            </tr>
+        </thead>
+        <tbody>
 
-              <!-- dynamic table will be load here -->
+          <!-- dynamic table will be load here -->
 
-          </tbody>
-      </table>
-  </div>
+      </tbody>
+  </table>
+</div>
 </div>
 </div>
 </div>
@@ -85,10 +85,10 @@
             </div>
 
             <div class="modal-body">
-               <div class="col-12">
+             <div class="col-12">
                 <div class="card">
 
-                    <form id="addForm">
+                    <form id="addSubjectForm">
                         <input type="hidden" name="edit_id" id="edit_id"/>
                         <div class="form-body">
                             {{ csrf_field() }}
@@ -180,7 +180,7 @@
             $('#addBtn').click(function(event) {
                 $('#modalHeader').html('Add New Subject');
                 $('#edit_id').val('');
-                $('#addForm')[0].reset();
+                $('#addSubjectForm')[0].reset();
                 // var select_id = $('#district_id :selected').attr('value');
                 // thanalist(select_id);
 
@@ -190,13 +190,13 @@
 
 
 
-            $("#addForm").on('submit', function(event) {
+            $("#addSubjectForm").on('submit', function(event) {
                 event.preventDefault();
 
-                var form_data = document.getElementById("addForm");
+                var form_data = document.getElementById("addSubjectForm");
                 var fd = new FormData(form_data);
                 if(fd.get('theName') != ""){
-                    $.ajax({
+                    $.ajax({ 
                         url: "{{ url('/addsubject') }}",
                         data: fd,
                         cache: false,

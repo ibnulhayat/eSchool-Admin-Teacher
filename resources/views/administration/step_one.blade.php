@@ -1,5 +1,6 @@
 @push('styles')
 <style>
+
 #hidden_upload {
 	height: 0;
 	overflow: hidden;
@@ -45,11 +46,11 @@
 	transform: scale(1);
 }
 
-#div_step_one{
+#div_step_one {
 	display: none;
 
 }
-#div_admitted_class{
+#div_admitted_class {
 	display: none;
 }
 

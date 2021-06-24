@@ -3,69 +3,69 @@
 
 @push('styles')
 <style>
-    .border-left-danger{
-        border-left-style: solid;
-        border-left-color: red;
-    }
-    .border-left-dark{
-        border-left-style: solid;
-        border-left-color: black;
-    }
-    .border-left-info{
-        border-left-style: solid;
-        border-left-color: #1976D2;
-    }
-    .border-left-warning{
-        border-left-style: solid;
-        border-left-color: #FFA500;
-    }
-    .border-left-success{
-        border-left-style: solid;
-        border-left-color: #06D79C;
-    }    
-    .border-left-primary{
-        border-left-style: solid;
-        border-left-color: #745AF2;
-    }    
-    .border-left-secondary{
-        border-left-style: solid;
-        border-left-color: #5A6268;
-    }   
-    .border-left-deepSky{
-        border-left-style: solid;
-        border-left-color: #32CD32;
-    }
-    .border-left-teal{
-        border-left-style: solid;
-        border-left-color: #808000;
-    }
-    .text-deepsky{
-        color:#32CD32;
-    }
-    .text-teal{
-        color:#808000;
-    }
-    .custom_row{
-        width: 100%;
-        margin-left: 15px;
-        margin-right: 15px;
-        margin-bottom: 0px;
-    }
-    .vl {
-        border-left: 2px solid #E5E5E5;
-        margin-bottom: 10px;
-    }
-    .fonticon-list{
-        list-style: none;
-        margin: 20px 0;
-        padding: 0;
-    }
-    .mt-10{
-        margin-top: 22px;
-    }
-    .card-body{
-        padding: 20px 5px 20px 5px;
-    }
+.border-left-danger{
+    border-left-style: solid;
+    border-left-color: red;
+}
+.border-left-dark{
+    border-left-style: solid;
+    border-left-color: black;
+}
+.border-left-info{
+    border-left-style: solid;
+    border-left-color: #1976D2;
+}
+.border-left-warning{
+    border-left-style: solid;
+    border-left-color: #FFA500;
+}
+.border-left-success{
+    border-left-style: solid;
+    border-left-color: #06D79C;
+}    
+.border-left-primary{
+    border-left-style: solid;
+    border-left-color: #745AF2;
+}    
+.border-left-secondary{
+    border-left-style: solid;
+    border-left-color: #5A6268;
+}   
+.border-left-deepSky{
+    border-left-style: solid;
+    border-left-color: #32CD32;
+}
+.border-left-teal{
+    border-left-style: solid;
+    border-left-color: #808000;
+}
+.text-deepsky{
+    color:#32CD32;
+}
+.text-teal{
+    color:#808000;
+}
+.custom_row{
+    width: 100%;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 0px;
+}
+.vl {
+    border-left: 2px solid #E5E5E5;
+    margin-bottom: 10px;
+}
+.fonticon-list{
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+.mt-10{
+    margin-top: 22px;
+}
+.card-body{
+    padding: 20px 5px 20px 5px;
+}
 </style>
 @endpush
 @section('content')
@@ -83,7 +83,6 @@
                         <div class="d-flex">
                             <div class="m-l-5 text-center align-self-center">
                                 <i class="icon-phone text-deepsky" style="font-size:40px;"></i>
-
                             </div>
                             <div class="text-center  ml-auto w-100">
                                 <h3 class="font-weight-bold text-deepsky mt-2 mb-1">Total Call</h3>
@@ -115,7 +114,6 @@
                     <div class="card-body">
                         <div class="d-flex">
                             <div class="m-l-5 text-center align-self-center">
-
                                 <i class="icon-phone text-primary" style="font-size:40px;"></i>
                             </div>
                             <div class="text-center  ml-auto w-100">
@@ -148,7 +146,6 @@
 
 
     <div class="custom_row mt-10 bg-white rounded">
-
         <div class=" card-body">
             <div class="d-md-flex">
                 <div>
@@ -190,18 +187,13 @@
     </div>
 
     <div class="row" style="margin-left: 2px; margin-right: 2px; margin-top: 30px;" >
-
         <div class="mt-12 col-md-12 col-sm-12">
-
             <div class="card-body rounded bg-white">
                 <div>
                     <h3 class="card-title mb-3">Category List</h3>
                 </div>
-                <div class="row" id="items_view" >
-
-                </div>
+                <div class="row" id="items_view" ></div>
             </div>
-
         </div>
     </div>
 

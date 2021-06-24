@@ -1,4 +1,4 @@
-<?php
+checkDataDuplicacyOnEdit<?php
 
 namespace App\Http\Controllers;
 
@@ -27,14 +27,15 @@ class Subject extends Controller
         $data['short_name'] = trim($req->short_name);
         $data['created_by'] = session('id');
 
-        $value = $ccObj->checkThanaDuplicacy('subjects', 'full_name', $data['full_name'],'short_name',$data['short_name']);
+        $value = $ccObj->checkDataDuplicacyOnEdit('subjects', 'full_name', $data['full_name'],'short_name',$data['short_name']);
 
         $editId = $req->edit_id;
 
         if($editId == ""){
             if (count($value) > 0) {
-                return response()->json(array("result" => "error", "message" => "This referral item already exist"));
+                return response()->json(array("result" => "error", "message" => "This Subject name already exist"));
             }else{
+                
                 // if($ccObj->checkUserAccess("Referral","Add") == "no_access"){
 
                 //  return response()->json(array("result" => "error", "message" => "Sorry you don't have access. Please contact with the admin."));

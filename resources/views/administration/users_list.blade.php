@@ -34,9 +34,7 @@
 						<h3 class="m-b-0 text-white">Show All Users List</h3>
 					</div>
 					<div class="ml-auto">
-						<button id="addBtn" type="button" class="addBtn btn waves-effect waves-light btn-outline-light">
-						Add New User</button>
-
+						<button id="addBtn" type="button" class="addBtn btn waves-effect waves-light btn-outline-light">Add New User</button>
 					</div>
 				</div>
 			</div>
@@ -60,7 +58,6 @@
 						</thead>
 						<tbody>
 							<!-- dynamic table will be load here -->
-
 						</tbody>
 					</table>
 				</div>
@@ -112,10 +109,7 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 
-		
-
 		var table = $('#usersList').DataTable({
-
 			processing: true,
 			serverSide: true,
 			ajax: {
@@ -187,9 +181,7 @@
 			$('#education-info-student-Form')[0].reset();
 			$('#education-info-teacher-Form')[0].reset();
 			$("#div_step_one").show();
-
 		});
-
 
 
 		var row_id = "";
@@ -214,7 +206,6 @@
 				}
 			});
 		});
-
 
 
 		function districtlist() {
@@ -255,7 +246,6 @@
 			//$("#submit-student").prop("disabled", true);
 			var form_data = document.getElementById("education-info-student-Form");
 			var fd = new FormData(form_data);
-
 			$.ajax({
 				url: "{{url('/education-info-student')}}",
 				type: 'POST', 
@@ -300,7 +290,6 @@
 				}
 			});
 		});
-
 
 
 		function showNotification(type, message) {

@@ -146,7 +146,7 @@ class CommonController extends Controller
 		$data = DB::table($tableName)
 		->select($columnName)
 		->where($columnName, $compareValue)
-		->where($idColumnName,'!=', $id)
+		->where($idColumnName,$id)
 		->where('activation_status', '!=', 'deactive')
 		->limit(1)
 		->get();

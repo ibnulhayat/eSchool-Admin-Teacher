@@ -24,9 +24,7 @@
 						<h3 class="m-b-0 text-white">Show All District List</h3>
 					</div>
 					<div class="ml-auto">
-						<button id="addBtn" type="button" class="addBtn btn waves-effect waves-light btn-outline-light">
-						Add New District</button>
-
+						<button id="addBtn" type="button" class="addBtn btn waves-effect waves-light btn-outline-light">Add New District</button>
 					</div>
 				</div>
 
@@ -43,7 +41,6 @@
 						</thead>
 						<tbody>
 							<!-- dynamic table will be load here -->
-
 						</tbody>
 					</table>
 				</div>
@@ -95,184 +92,181 @@
 
 									<div class="col-md-12">
 										<div class="form-group row">
-											<label  class="col-sm-4 control-label">Name:<span
-												class="text-danger">*</span></label>
-												<div class="col-sm-8">
-													<div class="controls">
-														<input type="text" maxlength="60" name="dis_name" class="form-control" id="dis_name"
-														placeholder="District Name" required="required" >
-													</div>
+											<label  class="col-sm-4 control-label">Name:<span class="text-danger">*</span></label>
+											<div class="col-sm-8">
+												<div class="controls">
+													<input type="text" maxlength="60" name="dis_name" class="form-control" id="dis_name"
+													placeholder="District Name" required="required" >
 												</div>
 											</div>
-										</div>
-										<!--/span-->
-										<div class="col-md-12">
-											<div class="form-group row">
-												<label for="phone" class="col-sm-4 control-label">Division:
-													<span class="text-danger">*</span></label>
-													<div class="col-sm-8">
-														<div class="controls">
-															<select class="form-control" name="division_id" id="division_id">
-																<option value="1">Chittagong</option>
-																<option value="2">Rajshahi</option>
-																<option value="3">Khulna</option>
-																<option value="4">Barisal</option>
-																<option value="5">Sylhet</option>
-																<option value="6">Dhaka</option>
-																<option value="7">Rangpur</option>
-																<option value="8">Mymensingh</option>
-															</select> 
-														</div>
-													</div>
-												</div>
-											</div>
-
-										</div>
-										<hr>
-										<div class="form-actions text-right">
-											<button type="button" class="btn waves-effect waves-light btn-outline-danger"
-											data-dismiss="modal">Cancel</button>
-
-											<button id="add_save_btn" type="submit" class="waves-effect waves-light btn btn-success" > <i class="fa fa-check"> </i> Save</button>
 										</div>
 									</div>
-								</form>
+									<!--/span-->
+									<div class="col-md-12">
+										<div class="form-group row">
+											<label for="phone" class="col-sm-4 control-label">Division: <span class="text-danger">*</span></label>
+											<div class="col-sm-8">
+												<div class="controls">
+													<select class="form-control" name="division_id" id="division_id">
+														<option value="1">Chittagong</option>
+														<option value="2">Rajshahi</option>
+														<option value="3">Khulna</option>
+														<option value="4">Barisal</option>
+														<option value="5">Sylhet</option>
+														<option value="6">Dhaka</option>
+														<option value="7">Rangpur</option>
+														<option value="8">Mymensingh</option>
+													</select> 
+												</div>
+											</div>
+										</div>
+									</div>
 
+								</div>
+								<hr>
+								<div class="form-actions text-right">
+									<button type="button" class="btn waves-effect waves-light btn-outline-danger" data-dismiss="modal">Cancel</button>
+
+									<button id="add_save_btn" type="submit" class="waves-effect waves-light btn btn-success" > <i class="fa fa-check"> </i> Save</button>
+								</div>
 							</div>
-						</div>
+						</form>
+
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- /end modal -->
+	</div>
+</div>
+<!-- /end modal -->
 
 
 
-		@endsection
-		@push('scripts')
+@endsection
+@push('scripts')
 
 
-		<script type="text/javascript">
-			$(document).ready(function() {
+<script type="text/javascript">
+	$(document).ready(function() {
 
 
-				$('#addBtn').click(function(event) {
+		$('#addBtn').click(function(event) {
 
-					$('#modalHeader').html('Add New District');
-					$('#addForm')[0].reset();
-					$('#addModal').modal('show');
+			$('#modalHeader').html('Add New District');
+			$('#addForm')[0].reset();
+			$('#addModal').modal('show');
 
-				});
-
-
-				$("#addForm").on('submit', function(event) {
-					event.preventDefault();
-
-					var form_data = document.getElementById("addForm");
-					var fd = new FormData(form_data);
-					if(fd.get('dis_name') != ""){
-						$.ajax({
-							url: "{{ url('/addDistrict') }}",
-							data: fd,
-							cache: false,
-							processData: false,
-							contentType: false,
-							type: 'POST',
-							success: function(data) {
-								if (data.result == "success") {
-									$('#addModal').modal('hide');
-									table.ajax.reload(null, false);
-									showNotification(data.result, data.message);
-								} else {
-									showNotification(data.result, data.message);
-								}
-							}
-						});
-					}
-
-				});
-
-				var table = $('#distictList').DataTable({
-					processing: true,
-					serverSide: true,
-					ajax: {
-						url: "{{ url('districtListDataTable') }}",
-						type: 'GET',
-					},
-					"order": [
-					[2, 'asc']
-					],
-					columns: [
-					{
-						data: 'name',
-					},
-					{
-						data: 'division',
-					},
-					{
-						data: 'action',
-						name: 'action',
-						orderable: false,
-						searchable: false
-					}
-					]
-				});
+		});
 
 
-				$('body').on('click', '.editData', function(event) {
-					var row_id = $(this).data('id');
-					$('#edit_id').val(row_id);
-					$('#modalHeader').html('Edit District Information');
+		$("#addForm").on('submit', function(event) {
+			event.preventDefault();
 
-					$.get("{{ url('/getDistrictById') }}/"+row_id, function(data) {
-						$('#addModal').modal('show');
-
-						var data = $.parseJSON(data);
-
-						$('#dis_name').val(data[0].name);
-						$('#division_id').val(data[0].division_id);
-
-					});
-				});
-
-
-
-
-				var row_id = "";
-				$('body').on('click', '.deleteData', function() {
-					row_id = $(this).data('id');
-					$('#deleteModal').modal('show');
-					console.log(row_id);
-				});
-
-
-				$("#delete_yes").click(function(event) {
-					$.post("{{ url('/districtDeleteByID') }}", {
-						"_token": "{{ csrf_token() }}",
-						'id': row_id,
-					},
-					function(data, textStatus, xhr) {
+			var form_data = document.getElementById("addForm");
+			var fd = new FormData(form_data);
+			if(fd.get('dis_name') != ""){
+				$.ajax({
+					url: "{{ url('/addDistrict') }}",
+					data: fd,
+					cache: false,
+					processData: false,
+					contentType: false,
+					type: 'POST',
+					success: function(data) {
 						if (data.result == "success") {
-							showNotification(data.result, data.message);
+							$('#addModal').modal('hide');
 							table.ajax.reload(null, false);
+							showNotification(data.result, data.message);
 						} else {
 							showNotification(data.result, data.message);
 						}
-					});
+					}
 				});
+			}
 
-				function showNotification(type, message) {
-					$.toast({
-						heading: message,
-						position: 'bottom-right',
-						loaderBg: '#ff6849',
-						icon: type,
-						hideAfter: 3000,
-						stack: 1
-					});
-				}
+		});
 
+		var table = $('#distictList').DataTable({
+			processing: true,
+			serverSide: true,
+			ajax: {
+				url: "{{ url('districtListDataTable') }}",
+				type: 'GET',
+			},
+			"order": [
+			[2, 'asc']
+			],
+			columns: [
+			{
+				data: 'name',
+			},
+			{
+				data: 'division',
+			},
+			{
+				data: 'action',
+				name: 'action',
+				orderable: false,
+				searchable: false
+			}
+			]
+		});
+
+
+		$('body').on('click', '.editData', function(event) {
+			var row_id = $(this).data('id');
+			$('#edit_id').val(row_id);
+			$('#modalHeader').html('Edit District Information');
+
+			$.get("{{ url('/getDistrictById') }}/"+row_id, function(data) {
+				$('#addModal').modal('show');
+
+				var data = $.parseJSON(data);
+
+				$('#dis_name').val(data[0].name);
+				$('#division_id').val(data[0].division_id);
 
 			});
-		</script>
-		@endpush
+		});
+
+
+
+
+		var row_id = "";
+		$('body').on('click', '.deleteData', function() {
+			row_id = $(this).data('id');
+			$('#deleteModal').modal('show');
+			console.log(row_id);
+		});
+
+
+		$("#delete_yes").click(function(event) {
+			$.post("{{ url('/districtDeleteByID') }}", {
+				"_token": "{{ csrf_token() }}",
+				'id': row_id,
+			},
+			function(data, textStatus, xhr) {
+				if (data.result == "success") {
+					showNotification(data.result, data.message);
+					table.ajax.reload(null, false);
+				} else {
+					showNotification(data.result, data.message);
+				}
+			});
+		});
+
+		function showNotification(type, message) {
+			$.toast({
+				heading: message,
+				position: 'bottom-right',
+				loaderBg: '#ff6849',
+				icon: type,
+				hideAfter: 3000,
+				stack: 1
+			});
+		}
+
+
+	});
+</script>
+@endpush
