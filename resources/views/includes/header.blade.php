@@ -19,6 +19,9 @@
     <link rel="stylesheet" type="text/css"
     href="{{asset('assets/plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}">
 
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- toast CSS -->
     <link href="{{asset('assets/plugins/toast-master/css/jquery.toast.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
@@ -54,7 +57,7 @@
         <!-- ============================================================== -->
         <!-- Main wrapper - style you can find in pages.scss -->
         <!-- ============================================================== -->
-        <div id="main-wrapper">
+        <div id="main-wrapper ">
             <!-- ============================================================== -->
             <!-- Topbar header - style you can find in pages.scss -->
             <!-- ============================================================== -->
@@ -242,11 +245,11 @@
                                 <!-- ============================================================== -->
                                 <!-- Page wrapper  -->
                                 <!-- ============================================================== -->
-                                <div class="page-wrapper">
+                                <div class="page-wrapper" >
                                     <!-- ============================================================== -->
                                     <!-- Container fluid  -->
                                     <!-- ============================================================== -->
-                                    <div class="container-fluid">
+                                    <div class="container-fluid ">
                                         <!-- ============================================================== -->
                                         <!-- End PAge Content -->
                                         <!-- ============================================================== -->
