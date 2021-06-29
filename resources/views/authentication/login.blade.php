@@ -29,10 +29,10 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-<style>
+    <style>
 
     .bg-image{
-        background-image:url(assets/images/background/bg-school.jpg);
+        background-image:url(assets/images/background/bg-image.jpg);
         
     }
     .view{
@@ -179,28 +179,28 @@
                 jQuery(document).ready(function ($) {
 
 
-                 $(function () {
+                   $(function () {
                     $(".preloader").fadeOut();
                 });
 
-                 $(function () {
+                   $(function () {
                     $('[data-toggle="tooltip"]').tooltip();
                 });
 
-                 $('#forget_password').on("click", function (event) {
+                   $('#forget_password').on("click", function (event) {
                     event.preventDefault();
                     $('#login_form').toggle();
                     $('#recoverform').show(500); 
                 });
 
-                 $('#login_back').on("click", function (event) {
+                   $('#login_back').on("click", function (event) {
                     event.preventDefault();
                     $('#recoverform').toggle(); 
                     $('#login_form').show(500);
                 });
 
 
-                 $("#login_form").on('submit', function (event) {
+                   $("#login_form").on('submit', function (event) {
                     event.preventDefault();
 
                     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
@@ -233,7 +233,7 @@
                 });
 
 
-                 $("#recoverform").on('submit', function (event) {
+                   $("#recoverform").on('submit', function (event) {
                     event.preventDefault();
                     $("#button_emailsend").prop("disabled", true);
                     $("#button_emailsend").text("Please wait...");
@@ -263,7 +263,7 @@
                     });
                 });
 
-                 function hideinputSection($message) {
+                   function hideinputSection($message) {
                     $('#recovery_input_section').hide(100); 
                     $('#recevory_title').text("E-mail Send Successfully");                        
                     $('#recovery_message').text($message); 

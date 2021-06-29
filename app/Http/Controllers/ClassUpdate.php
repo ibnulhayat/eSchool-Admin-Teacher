@@ -6,9 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Datatables;
 
-class Subject extends Controller
+class ClassUpdate extends Controller
 {
-    //
 
     public function __construct()
     {
@@ -17,7 +16,7 @@ class Subject extends Controller
 
     public function index()
     {
-        return view('subject/subject');
+        return view('class_update');
         
     }
     public function addSubject(Request $req)
@@ -35,7 +34,7 @@ class Subject extends Controller
             if (count($value) > 0) {
                 return response()->json(array("result" => "error", "message" => "This Subject name already exist"));
             }else{
-                
+
                 // if($ccObj->checkUserAccess("Referral","Add") == "no_access"){
 
                 //  return response()->json(array("result" => "error", "message" => "Sorry you don't have access. Please contact with the admin."));

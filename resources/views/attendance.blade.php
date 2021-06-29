@@ -45,26 +45,6 @@
 					</div>
 				</div>
 
-				<div class="form-check-inline">
-					<input  type="radio" name="inlineRadioOptions" id="radioPresent" value="Present"><label class="form-check-label" for="radioPresent">Present</label>
-
-					<input  type="radio" name="inlineRadioOptions" id="radioAbsent" value="Absent">
-					<label class="form-check-label" for="radioAbsent">Absent</label>
-
-					<input  type="radio" name="inlineRadioOptions" id="radioLeave" value="Leave">
-					<label class="form-check-label" for="radioLeave">Leave</label>
-				</div>
-				<div class="form-check-inline">
-					<input  type="radio" name="inlineRadioOptions" id="radioPresent" value="Present"><label class="form-check-label" for="radioPresent">Present</label>
-
-					<input  type="radio" name="inlineRadioOptions" id="radioAbsent" value="Absent">
-					<label class="form-check-label" for="radioAbsent">Absent</label>
-
-					<input  type="radio" name="inlineRadioOptions" id="radioLeave" value="Leave">
-					<label class="form-check-label" for="radioLeave">Leave</label>
-				</div>
-
-
 
 				<div class="col-md-12">
 					<form >

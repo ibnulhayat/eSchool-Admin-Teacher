@@ -193,17 +193,17 @@
                                                 </li>
                                             -->
                                             <li> 
-                                                <a class="waves-effect waves-dark" href="{{ url('/report') }}" aria-expanded="false"><i
-                                                    data-icon="P" class="linea-icon  ti-pencil-alt"></i><span class="hide-menu"> Add Grade</span></a>
+                                                <a class="waves-effect waves-dark" href="{{ url('/add_grade') }}" aria-expanded="false"><i
+                                                    data-icon="P" class="linea-icon  ti-pencil-alt"></i><span class="hide-menu">Add Grade</span></a>
                                                 </li>
 
-                                                <li> <a class="waves-effect waves-dark" href="{{ url('/report') }}" aria-expanded="false"><i
-                                                    data-icon="P" class="linea-icon  icon-plus"></i><span class="hide-menu"> Class Update</span></a>
+                                                <li> <a class="waves-effect waves-dark" href="{{ url('/class-update') }}" aria-expanded="false"><i
+                                                    data-icon="P" class="linea-icon  icon-plus"></i><span class="hide-menu">Class Update</span></a>
                                                 </li> 
 
-                                                <li> <a class="waves-effect waves-dark" href="{{ url('/report') }}" aria-expanded="false"><i
+                                                <!-- <li> <a class="waves-effect waves-dark" href="{{ url('/report') }}" aria-expanded="false"><i
                                                     data-icon="P" class="linea-icon   icon-note"></i><span class="hide-menu"> Evaluation</span></a>
-                                                </li>
+                                                </li> -->
 
                                                 <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i
                                                     data-icon="P" class="linea-icon  icon-map"></i><span 
@@ -222,7 +222,7 @@
                                                         <!-- <li><a href="{{ url('/teacheradd') }}">Add Teacher/Student</a></li> -->
                                                         <li><a href="{{ url('/userslist') }}">Teachers / Students</a></li> 
                                                         
-                                                        <li><a href="{{ url('/useraccess') }}">User Access(By Page)</a></li>
+                                                        <!-- <li><a href="{{ url('/useraccess') }}">User Access(By Page)</a></li> -->
                                                     </ul> 
                                                 </li> 
 

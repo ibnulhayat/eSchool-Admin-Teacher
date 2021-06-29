@@ -31,9 +31,9 @@ Route::get('/login', 'Authentication\Login@index');
 
 Route::post('/loginCheck', 'Authentication\Login@loginCheck');
 
-// Route::post('/sendemail', 'Authentication\Login@sendEmail'); 
-// Route::get('/passwordreset/{token}', 'Authentication\PasswordReset@passwordResetView');
-// Route::post('/passwordreset', 'Authentication\PasswordReset@passwordReset');
+Route::post('/sendemail', 'Authentication\Login@sendEmail'); 
+Route::get('/passwordreset/{token}', 'Authentication\PasswordReset@passwordResetView');
+Route::post('/passwordreset', 'Authentication\PasswordReset@passwordReset');
 
 
 Route::group(['middleware' => 'admin'], function () {
@@ -105,21 +105,10 @@ Route::group(['middleware' => 'admin'], function () {
 	Route::post('/makeAttendance','Attendance@makeAttendance');
 
 
-	//Resource mngmnt
-	//Category 
-	Route::get('/category', 'Category@category');
-	Route::get('/categoryListDataTable', 'Category@categoryListDataTable');
-	Route::get('/getCatagoryById/{id}', 'Category@getCategoryById'); 
-	Route::post('/addCategory', 'Category@addCategory');
-	Route::post('/categoryDeleteByID', 'Category@categoryDeleteByID');
+	//Add Grade 
+	Route::get('/add_grade', 'Grade@index');
 	
-
-	//Resource  
-	Route::get('/resource/{id?}', 'Resource@resourceView');
-	Route::post('/addnewresource', 'Resource@addNewResource');
-	Route::get('/resourcedatatable/{id?}', 'Resource@resourceDataTable');
-	Route::get('/getresourceById/{id}', 'Resource@getResourceById');
-	Route::post('/resourceDeleteById', 'Resource@resourceDeleteById');
+	Route::get('/add_grade', 'ClassUpdate@index');
 
 
 	//Users List 
@@ -139,42 +128,8 @@ Route::group(['middleware' => 'admin'], function () {
 	Route::post('/changePass', 'ProfileData@changePass');
 
 
-	// Groups mngmnt
-	Route::get('/group', 'GroupsManag@groupsManag');
-	Route::post('/addgroup','GroupsManag@addGroup');
-	Route::get('/groupdatalist', 'GroupsManag@groupDataList');
-	Route::get('/getgroupbyid/{id}', 'GroupsManag@getGroupById'); 
-	Route::post('/groupdeleteByID', 'GroupsManag@groupDeleteByID');
-	Route::get('/getdate/{dt_old}', 'GroupsManag@getdate');  
 
-	
-	
-	
-	// report
-	Route::get('/report','Report@reportView');
-	Route::get('/allcallerDataTable','Report@allCallerDataList');
-	Route::post('/callerdeleteByID','Report@callerDeleteById');
-	Route::get('/reportDataTable','Report@reportDataTable');
-	Route::post('/reportdeleteByID','Report@reportDeleteByID');
-	Route::get('/callerinfoById/{id}','Report@getCallerInfoById');
-	Route::post('/updateCallerInfo','Report@updateCallerInfo');
-	Route::get('/callerserviceById/{id}','Report@getCallerServiceById');
-	Route::post('/updateCallerService','Report@updateCallerService');
-	
-	
-	// download report
-	Route::get('/downloadreport','Downloadreport@downloadreport'); 
-	Route::get('/downloadexclefile','Downloadreport@downloadExcleFile');
-	Route::get('/callanalysis/{name?}','Downloadreport@callAnalysis'); 
-	Route::get('/getmonthyear','Downloadreport@getMonthYear');
 
-	// Setting
-	Route::get('/useraccess','UserAccess@index');
-	Route::get('/grupaccess','UserAccess@noAccess');
-	Route::get('/userList','UserAccess@userList');
-	Route::get('/pageListByUserId/{id_user}','UserAccess@pageListByUserId');
-	Route::post('/allowOrDenyAccess','UserAccess@allowOrDenyAccess');
-	//Route::get('/givenPageAccess/{user_id}','UserAccess@givenPageAccess');
 
 
 });

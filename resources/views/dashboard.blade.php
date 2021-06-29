@@ -119,11 +119,11 @@
             <div class="card-body">
                 <div class="d-flex">
                     <div class="w-100 ">
-                        <h2 class="text-primary align_center" id="total_">200</h2>
+                        <h2 class="text-primary align_center" id="total_">5</h2>
                     </div>
                     <div class="text-center">
-                        <i class=" icon-people text-primary" style="font-size:40px;"></i>
-                        <h3 class="font-weight-bold text-primary"></h3>
+                        <i class="fas fa-users text-primary" style="font-size:40px;"></i>
+                        <h3 class="font-weight-bold text-primary">Classes</h3>
                     </div>
                 </div>
             </div>
@@ -135,11 +135,11 @@
             <div class="card-body">
                 <div class="d-flex">
                     <div class="w-100 ">
-                        <h2 class="text-teal align_center" id="total_">20</h2>
+                        <h2 class="text-teal align_center" id="total_">2</h2>
                     </div>
                     <div class="text-center">
-                        <i class=" icon-people text-teal" style="font-size:40px;"></i>
-                        <h3 class="font-weight-bold text-teal"></h3>
+                        <i class="icon-bell text-teal" style="font-size:40px;"></i>
+                        <h3 class="font-weight-bold text-teal">Notice</h3>
                     </div>
                 </div>
             </div>
